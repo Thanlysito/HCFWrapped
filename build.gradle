@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'dev.thanly'
+version = '1.1.0'
+
+// La API de 1.8.8 se toma del propio servidor Paper 1.8.8 (cache/patched_1.8.8.jar),
+// copiado a la carpeta libs/. Asi no dependemos de repositorios viejos que ya no existen.
+dependencies {
+    compileOnly fileTree(dir: 'libs', include: '*.jar')
+}
+
+// Minecraft 1.8.8 corre con Java 8, asi que compilamos para Java 8.
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 8
+    options.compilerArgs << '-Xlint:-options'
+}
+
+processResources {
+    filteringCharset = 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand(version: project.version)
+    }
+}

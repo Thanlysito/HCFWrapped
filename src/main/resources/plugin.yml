@@ -1,0 +1,23 @@
+name: HCFWrapped
+version: '${version}'
+main: dev.thanly.wrapped.HCFWrapped
+author: Thanly
+description: A "Spotify Wrapped" for HCF maps. Tracks every player's season and shares a stats card on Discord.
+
+commands:
+  wrapped:
+    description: See your HCF Wrapped.
+    usage: /wrapped [player|top|share|help]
+    aliases: [hcfwrapped, recap]
+    permission: hcfwrapped.use
+
+permissions:
+  hcfwrapped.use:
+    description: See your own Wrapped, the top lists and share your card.
+    default: true
+  hcfwrapped.others:
+    description: See other players' Wrapped.
+    default: true
+  hcfwrapped.admin:
+    description: Start/end seasons, add custom stats, post the server recap, reload.
+    default: op

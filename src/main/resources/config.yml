@@ -1,0 +1,58 @@
+# ==========================================================
+#  HCF Wrapped - by Thanly
+#  A "Spotify Wrapped" for your HCF map.
+#  Colors in messages use & codes (&a green, &l bold...).
+#  After editing: /wrapped reload
+# ==========================================================
+
+# Language file from plugins/HCFWrapped/lang/ (en, es)
+language: en
+
+# Shown on the image card
+server-name: "My HCF"
+
+# Can normal players see their Wrapped while the map is still running?
+# (false = only after /wrapped season end, like the real Wrapped)
+view-during-season: false
+
+# /wrapped opens a chest menu (true) or prints the recap in chat (false).
+# Players can always use /wrapped chat to see the chat version.
+open-menu: true
+
+# Remind players to check their Wrapped when they join after the season ended
+remind-on-join: true
+
+# Seconds between /wrapped share for the same player
+share-cooldown-seconds: 300
+
+# ----------------------------------------------------------
+#  HCF stats that come from your core / KOTH plugin.
+#  Add them with:  /wrapped add <player> <stat> <amount>
+#  Example: in your KOTH plugin rewards, run the console command
+#           wrapped add %player% koth 1
+#  Format:  id: "Name shown to players"
+# ----------------------------------------------------------
+custom-stats:
+  koth: "KOTHs captured"
+  raids: "Raids"
+
+# ----------------------------------------------------------
+#  Discord
+#  Channel settings -> Integrations -> Webhooks -> New Webhook -> Copy URL
+# ----------------------------------------------------------
+discord:
+  webhook-url: ""
+  # Post the top players of the season when you run /wrapped season end
+  recap-on-end: true
+
+# ----------------------------------------------------------
+#  Image card
+# ----------------------------------------------------------
+card:
+  accent-color: "#F5C542"
+  background-top: "#0A0A0A"
+  background-bottom: "#1E1E1E"
+  # Where to get the player's face. {player} = player name
+  avatar-url: "https://mc-heads.net/avatar/{player}/140"
+  # Full body render shown on the card (falls back to the face if it fails)
+  body-url: "https://mc-heads.net/body/{player}/right"
